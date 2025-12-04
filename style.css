@@ -19,6 +19,8 @@ header {
     margin: 0 auto;
     padding: 0.5rem 1rem;
     height: 10vh;
+    
+    
 }
 
 header h1 {
@@ -66,9 +68,12 @@ header .navList li {
 header .navList li a {
     text-decoration: none;
 }
-header .navList .navItem {
-    display: none;
+.navItem {
+  display: none;
 }
+
+
+
 .logo{
     
     display: flex;
@@ -93,7 +98,7 @@ main {
     gap: 0.5rem;
     width: 60%;
     height: 90%;
-    margin: 0;
+    margin-bottom:2rem;
     padding:0; 
 }
 .hero article{
@@ -108,7 +113,7 @@ main {
     margin: 0;
     padding: 0;
 }
-.hero article img {
+article img {
     display: block;
     width: 350px;
     height: 200px;
