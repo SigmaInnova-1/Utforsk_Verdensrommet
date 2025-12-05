@@ -12,15 +12,14 @@ body {
 }
 
 header {
-    background-color: #e38f2148;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     padding: 0.5rem 1rem;
     height: 10vh;
-    
-    
+    box-shadow: 0 4px 8px #faebd760;
+    background-color: #e38f2148;
 }
 
 header h1 {
@@ -31,88 +30,149 @@ header h1 {
     padding: 1rem;
 }
 
-header .navList {
+header .nav-list {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    position: relative;
 }
 
-header .navSubMenu {
+header .nav-list li {
+    list-style: none;
+}
+
+header .nav-list .toggle-submenu {
     border-radius: 50%;
     width: 48px;
     height: 48px;
-    background-color: #e38f21bf;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease;
-}
-header .navSubMenu:hover{
-    background-color: #faebd760;
-}
-header .navSubMenu span {
-    font-size: 1.85rem;
-    margin-bottom: 0.2rem;
     user-select: none;
     cursor: pointer;
-    transition: font-style 0.1s ease;
-}
-header .navSubMenu span:hover{
-    font-style:italic
-}
-header .navList li {
-    list-style: none;
-    font-weight: bold;
-}
-header .navList li a {
-    text-decoration: none;
-}
-.navItem {
-  display: none;
+    box-shadow: 0 4px 8px #faebd760;
+    background-color: #e38f21bf;
+    transition: all 0.3s ease;
 }
 
+header .nav-list .toggle-submenu:hover {
+    background-color: #faebd760;
+    font-style: italic;
+}
 
+header .nav-list .toggle-submenu span {
+    font-size: 1.85rem;
+    margin-bottom: 0.2rem;
 
-.logo{
-    
-    display: flex;
+}
+
+header .nav-list .toggle-show-submenu {
+    display: none;
+    transition: display 1s ease;
+   
+}
+
+header .nav-list .submenu {
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    position: fixed;
+    left: 0;
+    top: 10vh;
+    width: 150px;
+    height: 250px;
+    margin: 0;
+    padding: 0;    
+    text-align: left;      
+    flex-direction: column;  
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    border-radius: 0 0 12px;
+    border: 1px solid #e38f21bf;
+    border-top: none;
+    border-left: none;
+    box-shadow: 0 4px 8px #faebd760;
+    background-color: #e38f2148;
 }
+
+header .nav-list .submenu li {
+    list-style: none;
+    width: 100%; 
+}
+
+header .nav-list .submenu li a {
+ 
+    display: block;         
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    width: 100%;
+    font-style: italic;
+    text-align: center;       
+    padding: 0.3rem 0;
+    transition: all 0.75s ease;
+}
+header .nav-list .submenu li a:hover{
+    border-bottom: 1px solid #fff;
+    background-color: #e38f21bf;
+}
+.toggle-show-submenu:checked+.toggle-submenu+.submenu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    display: flex;
+}
+
+
+.logo {
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
 .logo img {
     width: 64px;
     height: 64px;
     object-fit: cover;
 }
+
 main {
     height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
-  
+
 }
+
 .hero {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     width: 60%;
     height: 90%;
-    margin-bottom:2rem;
-    padding:0; 
+    margin-bottom: 2rem;
+    padding: 0;
 }
-.hero article{
+
+.hero article {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    border: 1px solid #faebd760;
-    background-color:#e38f2148;
     border-radius: 12px;
     margin: 0;
     padding: 0;
+    border: 1px solid #faebd760;
+    box-shadow: 0 4px 8px #faebd760;
+    background-color: #e38f2148;
 }
+
 article img {
     display: block;
     width: 350px;
@@ -121,13 +181,16 @@ article img {
     object-fit: cover;
     border-radius: 7px;
 }
+
 figure {
-    margin: 0; 
+    margin: 0;
     padding: 0.5rem 1rem;
 }
-figcaption{
+
+figcaption {
     font-size: 1.2rem;
 }
+
 footer {
     height: 5vh;
     background-color: #e38f2148;
@@ -148,38 +211,43 @@ footer {
         font-size: 1.3rem;
         padding: 0;
     }
+
     .logo img {
         width: 42px;
         height: 42px;
         object-fit: cover;
     }
-    header .navSubMenu {
-    
-        width: 36px;
-        height: 36px;
-      
+
+    header .nav-list .toggle-submenu {
+
+        width: 32px;
+        height: 32px;
+
     }
-    header .navSubMenu span{
+
+    header .nav-list .toggle-submenu span {
         font-size: 0.9rem;
     }
+
     main {
         height: auto;
         padding: 1rem 0;
     }
+
     .hero {
         display: grid;
         grid-template-columns: 1fr;
         width: 100%;
         margin: 0 auto;
         gap: 0.5rem;
-       
-    }
-    article img {
-        width: 100%;       
-        height: auto;      
-        aspect-ratio: 16 / 9; 
-        object-fit: cover; 
 
+    }
+
+    article img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
     }
 
 }
