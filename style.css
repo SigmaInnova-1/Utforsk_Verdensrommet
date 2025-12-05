@@ -15,12 +15,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin: 0 auto;
     padding: 0.5rem 1rem;
     width: 100vw;
     max-width: 100%;
-
     height: 10vh;
     box-shadow: 0 4px 8px #faebd760;
     background-color: #e38f2148;
@@ -38,7 +36,8 @@ header .nav-list {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding:0;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -89,7 +88,7 @@ header .nav-list .submenu {
     height: 250px;
     margin: 0;
     padding: 0;
-    text-align: left;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -117,7 +116,9 @@ header .nav-list .submenu li a {
     font-style: italic;
     text-align: center;
     padding: 0.3rem 0;
+    text-shadow: 0 2px 1px #f00;
     transition: all 0.75s ease;
+   
 }
 
 header .nav-list .submenu li a:hover {
@@ -125,7 +126,7 @@ header .nav-list .submenu li a:hover {
     background-color: #e38f21bf;
 }
 
-.toggle-show-submenu:checked+.toggle-submenu+.submenu {
+.toggle-show-submenu:checked ~.submenu {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
@@ -176,6 +177,7 @@ main {
     border: 1px solid #faebd760;
     box-shadow: 0 4px 8px #faebd760;
     background-color: #e38f2148;
+   
 }
 
 article img {
@@ -185,6 +187,11 @@ article img {
     aspect-ratio: 9 / 16;
     object-fit: cover;
     border-radius: 7px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+article img:hover{
+    transform: scale(1.08);
 }
 
 figure {
@@ -192,10 +199,33 @@ figure {
     padding: 0.5rem 1rem;
 }
 
-figcaption {
+figcaption a{
     font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease;
 }
+figcaption a:hover{
+    color:#e38f21bf;
+}
+figcaption a::after{
+    content: "";
+    position: absolute;
+    bottom:-2px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s ease;
 
+}
+figcaption a:hover::after{
+    width: 100%;
+    color: #e38f21bf;
+}
 footer {
     height: 5vh;
     background-color: #e38f2148;
@@ -275,6 +305,11 @@ footer {
         height: auto;
         aspect-ratio: 16 / 9;
         object-fit: cover;
+        transition: none;
+        transform: none; 
+    }
+    article img:hover{
+        transform: none; 
     }
 
 }
