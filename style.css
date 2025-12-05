@@ -79,9 +79,9 @@ header .nav-list .submenu {
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
 
-    position: fixed;
-    left: 0;
-    top: 10vh;
+    position: absolute;
+    left: -50%;
+    top: 12vh;
     width: 150px;
     height: 250px;
     margin: 0;
