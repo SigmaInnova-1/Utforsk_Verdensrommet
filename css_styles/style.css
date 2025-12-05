@@ -208,7 +208,8 @@ figcaption a{
     transition: color 0.3s ease;
 }
 figcaption a:hover{
-    color:#e38f21bf;
+    font-style: italic;
+    font-weight: bold;
 }
 figcaption a::after{
     content: "";
@@ -233,6 +234,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
 }
 
 
@@ -281,8 +283,8 @@ footer {
     header .nav-list .submenu {
 
         position: absolute;
-        left: -100%;
-        top: 80px;
+        left: -100px;
+        top: 50px;
 
     }
 
@@ -313,11 +315,16 @@ footer {
     }
 
 }
+@media (max-width: 696px) {
+    header .nav-list .submenu {
+        top: 45px;
+    }
+}
 
 
 
 @media (max-width: 476px) {
     header .nav-list .submenu {
-        top: 80px;
+        top: 60px;
     }
 }
