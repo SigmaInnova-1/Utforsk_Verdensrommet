@@ -214,18 +214,18 @@ figcaption a:hover{
 figcaption a::after{
     content: "";
     position: absolute;
-    bottom:-2px;
+    bottom:2px;
     left:50%;
     transform: translateX(-50%);
     width: 0%;
     height: 2px;
-    background-color: #fff;
+    background-color: #f00;
     transition: width 0.5s ease;
+    font-weight: bold;
 
 }
 figcaption a:hover::after{
     width: 100%;
-    color: #e38f21bf;
 }
 footer {
     height: 5vh;
